@@ -14,7 +14,8 @@ class App extends Component {
     super();
     // create an initial state
     this.state={
-     products: []
+     products: [],
+     beersOnDisplay: null
     }
   }
 
@@ -59,29 +60,25 @@ class App extends Component {
 
   
   randomNumber = () => {
-          return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
-        }
-  // beerOfTheDayFunc = () => {
-  //   this.setState({
-  //     beerOfTheDay: this.state.products[0]
-  //   })
-  //   // console.log(this.state.beerOfTheDay)
-  // }
-
-
-  renderProducts = (beerOfTheDay) => {
-    if (beerOfTheDay[0]) {
-      return (
-        <>
-            <ProductDisplaySection beerOfTheDay={beerOfTheDay} />
-        </>
-      )
-    }
+    return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
   }
 
+  
+  // beerOfTheDayFunc = () => {
+  //   if (this.state.products){
+  //    const productsArray = this.state.products //Immediately this is empty, untill after the state updates
+  //     const randomBeersDisplay = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
+  //     this.setState({
+  //       randomBeersDisplay: productsArray
+  //     })
+  //   }
+  // }
+  
   render(){
-    const productsArray = this.state.products
-    const beerOfTheDay = [productsArray[this.randomNumber()]]
+    const productsArray = this.state.products //Immediately this is empty, untill after the state updates
+    const productsCheck = this.state.products.slice(0, 3)
+    const randomBeersDisplay = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
+    console.log(productsCheck)
     return (
       <div className="App">
         <Header />
@@ -91,7 +88,8 @@ class App extends Component {
           </div>
           <div className="sortAndProductSectionCon">{/* Potential component? */}
             <SortSection />
-            {this.renderProducts(beerOfTheDay)}
+            <ProductDisplaySection randomBeersDisplay={randomBeersDisplay} />
+            {/* {this.renderProducts(randomBeersDisplay)} */}
           </div>
         </main>
       </div>

@@ -3,18 +3,37 @@ import ProductDisplayCards from './ProductDisplayCards.js';
 
 
 class ProductDisplaySection extends Component {
+    
+    componentDidMount(){}
+    
+    
+    renderProducts = (randomBeersDisplay) => {
+        if (randomBeersDisplay[0]) {
+          return (
+            <>
+                <ProductDisplayCards randomBeersDisplay={randomBeersDisplay} />
+           </>
+          )
+        }
+      }      
+    
     render() {
-        const {beerOfTheDay} = this.props
+        const {randomBeersDisplay} = this.props
+        
+        console.log(randomBeersDisplay)
         return (
             <section className="productDisplaySection">
                 <div className="productDisplayCon wrapper">
-                    {beerOfTheDay[0] ? <ProductDisplayCards beerOfTheDay={beerOfTheDay} /> : null}
+                    {this.renderProducts(randomBeersDisplay)}
+                   
                 </div>
             </section>
         )
 
-    }
+    }  
 
 }
 
-export default ProductDisplaySection; 
+export default ProductDisplaySection;  
+
+// {/* {randomBeersDisplay[0] ? <ProductDisplayCards randomBeersDisplay={randomBeersDisplay} /> : null} */}
