@@ -50,7 +50,6 @@ class App extends Component {
           return qs.stringify(params, {arrayFormat: 'brackets'})
         }
       }).then((response) => {
-
         this.setState({
           products: response.data,
           //beerOfTheDay: null //I wanted to add this AFTER, based on a function instead of needing a state...should I even avoid tusing a state? Need to put it here so that we're able to create bOFtheDAy AFER .then()....Be weary of the speed here! It cant be set based on products because products is created too soon before BeeoftheDat can be based on it ...prolly wanna just make this a default state up top**
@@ -70,10 +69,19 @@ class App extends Component {
   // }
 
 
+  renderProducts = (beerOfTheDay) => {
+    if (beerOfTheDay[0]) {
+      return (
+        <>
+            <ProductDisplaySection beerOfTheDay={beerOfTheDay} />
+        </>
+      )
+    }
+  }
 
   render(){
-    const productsArray = [...this.state.products]
-    const beerOfTheDay1 = [productsArray[this.randomNumber()]]
+    const productsArray = this.state.products
+    const beerOfTheDay = [productsArray[this.randomNumber()]]
     return (
       <div className="App">
         <Header />
@@ -83,7 +91,7 @@ class App extends Component {
           </div>
           <div className="sortAndProductSectionCon">{/* Potential component? */}
             <SortSection />
-            <ProductDisplaySection beerOfTheDay={beerOfTheDay1} />
+            {this.renderProducts(beerOfTheDay)}
           </div>
         </main>
       </div>

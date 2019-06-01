@@ -8,18 +8,20 @@ const ProductDisplayCards = ({beerOfTheDay}) => {
 
         // console.log(this.props.beerOfTheDay[0].image_url)
         // const firstBeerArray = firstBeer[0]
-        console.log(beerOfTheDay)
-       
-        return (
-            <div className="productDisplayCardsCon">
-                <div className="productDisplayImg">
-                    <img className="productImg" src="" alt=""/>
-                </div>
-                <div className="productDisplayInfo">
-                    <p className="productDescription"></p>
-                </div>
-            </div>
-        )
+       if (beerOfTheDay) {
+           console.log(beerOfTheDay)
+           return (
+               <div className="productDisplayCardsCon">
+                   <div className="productDisplayImg">
+                       <img className="productImg" src="" alt={beerOfTheDay[0].name}/>
+                   </div>
+                   <div className="productDisplayInfo">
+                       <p className="productDescription"></p>
+                   </div>
+               </div>
+           )
+
+       }
     }  
 
 
