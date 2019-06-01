@@ -73,8 +73,39 @@ main {
 
 .filterSectionCon {
   width: 20%;
+  height: 70vh;
 }
 
 .sortAndProductSectionCon {
   width: 80%;
+  height: 70vh;
+}
+
+/* ********* PRODUCT DISPLAY SECTION Styles ********** */
+
+.productDisplaySection {
+  padding: 20px 0;
+  height: 100%;
+
+}
+
+.productDisplayCon {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.productDisplayCardsCon {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.productImg {
+  object-fit: contain;
+  width: 100%;
 }
