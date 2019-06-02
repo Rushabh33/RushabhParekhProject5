@@ -4,32 +4,38 @@ import ProductDisplayCards from './ProductDisplayCards.js';
 
 class ProductDisplaySection extends Component {
     
-    componentDidMount(){}
-    
-    
-    renderProducts = (randomBeersDisplay) => {
-        if (randomBeersDisplay[0]) {
+    // This type of control is HEAVY blocking - then entire component is under wraps --> which is fine at this level, but not at App.js. We only want to be sending qualified-postAPI data to the next level
+    renderProducts = (apiCheck, beerData) => {
+        if (apiCheck.length) {
           return (
             <>
-                <ProductDisplayCards randomBeersDisplay={randomBeersDisplay} />
-           </>
+                {console.log(beerData)}
+                {console.log("line13")}
+                {/* <ProductDisplayCards  /> */}
+                {/* randomBeersDisplay={randomBeersDisplay} */}
+            </>
           )
         }
       }      
     
+    // componentDidMount(){
+    //     if (this.props.apiCheck){
+    //         this.props.beerOfTheDayTrigger()
+    //     }
+    // }
     render() {
-        const {randomBeersDisplay} = this.props
+        const {beerDataInState, afterAPIloads, beerOfTheDayTrigger} = this.props
+        beerOfTheDayTrigger()
+        // console.log(beerOfTheDayTrigger)
+        console.log(beerDataInState)
         
-        console.log(randomBeersDisplay)
         return (
             <section className="productDisplaySection">
                 <div className="productDisplayCon wrapper">
-                    {this.renderProducts(randomBeersDisplay)}
-                   
+                    {this.renderProducts(afterAPIloads, beerDataInState)}     
                 </div>
             </section>
         )
-
     }  
 
 }
