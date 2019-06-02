@@ -15,6 +15,12 @@ class ProductDisplaySection extends Component {
                 {/* randomBeersDisplay={randomBeersDisplay} */}
             </>
           )
+        } else {
+            return (
+                <>
+                    <p>Loding</p>
+                </>
+              )
         }
       }      
     
@@ -24,7 +30,7 @@ class ProductDisplaySection extends Component {
     //     }
     // }
     render() {
-        const {beerDataInState, afterAPIloads, beerOfTheDayTrigger} = this.props
+        const {beerDataInState, afterAPIloads} = this.props
         // console.log(beerOfTheDayTrigger)
         console.log(beerDataInState)
         
