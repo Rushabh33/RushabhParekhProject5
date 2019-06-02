@@ -81,6 +81,21 @@ main {
   height: 70vh;
 }
 
+/* ********* SORT SECTION Styles ********** */
+.sortSection {
+  padding: 20px 0;
+}
+
+.sortCon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sortTitle {
+  font-size: calc(1vw + 0.1rem);
+}
+
+
 /* ********* PRODUCT DISPLAY SECTION Styles ********** */
 
 .productDisplaySection {

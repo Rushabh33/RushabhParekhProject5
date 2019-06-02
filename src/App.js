@@ -8,6 +8,13 @@ import FilterSection from './components/FilterSection.js';
 import ProductDisplaySection from './components/ProductDisplaySection.js';
 // https://cors-anywhere.herokuapp.com//
 
+const priceSortFunctionLowToHigh = (a, b) => {
+  return parseFloat(a.price) - parseFloat(b.price)
+}
+const priceSortFunctionHighToLow = (a, b) => {
+  return parseFloat(b.price) - parseFloat(a.price)
+}
+
 class App extends Component {
   
   constructor(){
@@ -43,7 +50,8 @@ class App extends Component {
         this.setState({
           products: response.data,
           afterAPIloads: response.data.slice(0, 2),
-          beerDataInState: [response.data[this.randomNumber()], response.data[this.randomNumber()]]
+          beerDataInState: [response.data[this.randomNumber()], response.data[this.randomNumber()]],
+          beerOfTheDay: this.state.beerDataInState
         })
     })
   }
@@ -70,6 +78,38 @@ class App extends Component {
   //   } 
   // }
   
+
+  handleSortByPrice = (event) => {
+    // Get the current displayed items
+    const displayedProductsArray = [...this.state.beerDataInState]
+    console.log("This is the data before SORT")
+    console.log(displayedProductsArray)
+
+    if (event.target.value == "lowFirst"){
+      const sorted = [...displayedProductsArray].sort(priceSortFunctionLowToHigh)
+      console.log(sorted)
+      this.setState({
+        beerDataInState: sorted
+      })
+    } else if(event.target.value == "highFirst"){
+      const sorted = [...displayedProductsArray].sort(priceSortFunctionHighToLow)
+      console.log(sorted)
+      this.setState({
+        beerDataInState: sorted
+      })
+    }
+    
+
+  }
+
+  // handleSortByName = () => {
+    
+  // }
+
+  // handleSortByType = () => {
+    
+  // }
+
   render(){
     // const productsArray = this.state.products //Immediately this is empty, untill after the state updates
     // const productsCheck = this.state.products.slice(0, 3)
@@ -88,12 +128,17 @@ class App extends Component {
             <FilterSection />
           </div>
           <div className="sortAndProductSectionCon">{/* Potential component? */}
-            <SortSection />
+
+            <SortSection 
+            beerDataInState={this.state.beerDataInState}
+            handleSortByPrice={this.handleSortByPrice}/>
+            
             <ProductDisplaySection
               // afterAPIloads={this.state.afterAPIloads}
               beerDataInState={this.state.beerDataInState}/>
             {/* randomBeersDisplay={randomBeersDisplay}  */}
             {/* {this.renderProducts(randomBeersDisplay)} */}
+
           </div>
         </main>
       </div>
