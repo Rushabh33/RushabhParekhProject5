@@ -43,7 +43,7 @@ class App extends Component {
         this.setState({
           products: response.data,
           afterAPIloads: response.data.slice(0, 2),
-          randomTest: [response.data[this.randomNumber()], response.data[this.randomNumber()]]
+          beerDataInState: [response.data[this.randomNumber()], response.data[this.randomNumber()]]
         })
     })
   }
@@ -54,31 +54,29 @@ class App extends Component {
   }
 
   
-  beerOfTheDayTrigger = () => {
-    const productsArray = this.state.products
-    const beerDataInState = this.state.beerDataInState
-                console.log("beer of the day FUNCTION")
-                console.log(productsArray)
-    if (productsArray.length && beerDataInState == false ) {
+  // beerOfTheDayTrigger = () => {
+  //   const productsArray = this.state.products
+  //   const beerDataInState = this.state.beerDataInState
+  //               console.log("beer of the day FUNCTION")
+  //               console.log(productsArray)
+  //   if (productsArray.length && beerDataInState == false ) {
 
-      const beersOfTheDayData = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
-                console.log("beer of the day FUNCTION - hopefuly after the api called")
-                console.log(beersOfTheDayData)
-      this.setState({
-        beerDataInState: beersOfTheDayData
-      })
-    }
-    
-  }
+  //     const beersOfTheDayData = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
+  //               console.log("beer of the day FUNCTION - hopefuly after the api called")
+  //               console.log(beersOfTheDayData)
+  //     this.setState({
+  //       beerDataInState: beersOfTheDayData
+  //     })
+  //   } 
+  // }
   
   render(){
     // const productsArray = this.state.products //Immediately this is empty, untill after the state updates
     // const productsCheck = this.state.products.slice(0, 3)
     // const randomBeersDisplay = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
     // console.log(productsCheck)
-    console.log(this.state.afterAPIloads) // should have 2 
+    // console.log(this.state.afterAPIloads) // should have 2 
     console.log(this.state.beerDataInState)
-    console.log(this.state.randomTest)
     // const beersData = this.state.
 
 
@@ -92,9 +90,8 @@ class App extends Component {
           <div className="sortAndProductSectionCon">{/* Potential component? */}
             <SortSection />
             <ProductDisplaySection
-              afterAPIloads={this.state.afterAPIloads}
-              beerDataInState={this.state.beerDataInState}
-              beerOfTheDayTrigger={this.beerOfTheDayTrigger}/>
+              // afterAPIloads={this.state.afterAPIloads}
+              beerDataInState={this.state.beerDataInState}/>
             {/* randomBeersDisplay={randomBeersDisplay}  */}
             {/* {this.renderProducts(randomBeersDisplay)} */}
           </div>

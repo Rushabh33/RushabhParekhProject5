@@ -21,10 +21,10 @@ import React from 'react';
 //     )
 //   })  
 
-const ProductDisplayCards = ({randomBeersDisplay}) => {
+const ProductDisplayCards = ({beerDataInState}) => {
     // remember to check if matbe this condition is all I need
-    const beerCards = randomBeersDisplay.length ? (
-        randomBeersDisplay.map(beer => {
+    const beerCards = beerDataInState.length ? (
+        beerDataInState.map(beer => {
             return(
                 <div className="productDisplayCardsCon" key={beer.product_id}>
                     <div className="productDisplayImg">
