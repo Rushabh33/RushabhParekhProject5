@@ -73,7 +73,7 @@ main {
 
 .filterSectionCon {
   width: 20%;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .sortAndProductSectionCon {
@@ -101,11 +101,22 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
 }
-
+.productDisplayImg {
+  height: 100%;
+}
 
 .productImg {
   object-fit: contain;
-  width: 100%;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.productDescription {
+  text-align: left;
+  list-style: none;
+  padding-left: 5%;
+  padding-top: 5%;
 }
