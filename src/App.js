@@ -14,6 +14,9 @@ const priceSortFunctionLowToHigh = (a, b) => {
 const priceSortFunctionHighToLow = (a, b) => {
   return parseFloat(b.price) - parseFloat(a.price)
 }
+const randomNumber = () => {
+  return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
+}
 
 class App extends Component {
   
@@ -23,7 +26,9 @@ class App extends Component {
     this.state={
      products: [],
      beerDataInState: [],
-     afterAPIloads: []
+     afterAPIloads: [],
+     // to host the catagorized/filtered dataset in the sortSection
+     sortedBeerData: []
     }
   }
 
@@ -42,41 +47,20 @@ class App extends Component {
         }
       }).then((response) => {
 
-
-        this.randomNumber = () => {
-          return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
-        }
       
         this.setState({
           products: response.data,
           afterAPIloads: response.data.slice(0, 2),
-          beerDataInState: [response.data[this.randomNumber()], response.data[this.randomNumber()]],
+          // We're creating this random thing once just so that we can create 
+          beerDataInState: [response.data[randomNumber()], response.data[randomNumber()]],
+        })
+        // I can't put it in the first setState because it's asyncrounous...not sure the best way around it other then creating another setState
+        this.setState({ 
           beerOfTheDay: this.state.beerDataInState
         })
     })
   }
 
-  
-  randomNumber = () => {
-    return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
-  }
-
-  
-  // beerOfTheDayTrigger = () => {
-  //   const productsArray = this.state.products
-  //   const beerDataInState = this.state.beerDataInState
-  //               console.log("beer of the day FUNCTION")
-  //               console.log(productsArray)
-  //   if (productsArray.length && beerDataInState == false ) {
-
-  //     const beersOfTheDayData = [productsArray[this.randomNumber()], productsArray[this.randomNumber()]]
-  //               console.log("beer of the day FUNCTION - hopefuly after the api called")
-  //               console.log(beersOfTheDayData)
-  //     this.setState({
-  //       beerDataInState: beersOfTheDayData
-  //     })
-  //   } 
-  // }
   
 
   handleSortByPrice = (event) => {
@@ -102,13 +86,43 @@ class App extends Component {
 
   }
 
-  // handleSortByName = () => {
-    
-  // }
+  handleFilter = (e) => {
+    if (e == "allProducts"){
+      const displayAllProducts = [...this.state.products.slice(0, 10)]
+      console.log(displayAllProducts)
+      this.setState({
+        beerDataInState: displayAllProducts
+      })
+    }
 
-  // handleSortByType = () => {
+    else if (e == "beerOfTheDay"){
+      console.log(this.state.beerOfTheDay)
+      const displayBeerOfTheDay = [...this.state.beerOfTheDay]
+      // console.log(displayBeerOfTheDay)
+      this.setState({
+        beerDataInState: displayBeerOfTheDay
+      })
+    } 
+    else {
+      console.log(e);
+      const listOfBeers = [...this.state.products]
+      const searchedListOfBeers = [];
+      for (let i = 0; i <listOfBeers.length; i++){
+        if (listOfBeers[i].name.includes(e)){
+          // console.log("yes")
+          searchedListOfBeers.push(listOfBeers[i])
+        }
+      }  
+    this.setState({
+      beerDataInState: searchedListOfBeers.slice(0, 10) // change after figuring out infinite scroll idea...
+    })
+    }
+      
+      
+
     
-  // }
+    
+  }
 
   render(){
     // const productsArray = this.state.products //Immediately this is empty, untill after the state updates
@@ -125,17 +139,21 @@ class App extends Component {
         <Header />
         <main>
           <div className="filterSectionCon"> {/* Potential component? */}
-            <FilterSection />
+            <FilterSection 
+            handleFilter={this.handleFilter}
+            />
           </div>
           <div className="sortAndProductSectionCon">{/* Potential component? */}
 
             <SortSection 
             beerDataInState={this.state.beerDataInState}
-            handleSortByPrice={this.handleSortByPrice}/>
+            // handleSortByPrice={this.handleSortByPrice} 
+            />
             
             <ProductDisplaySection
               // afterAPIloads={this.state.afterAPIloads}
-              beerDataInState={this.state.beerDataInState}/>
+              beerDataInState={this.state.beerDataInState}
+              />
             {/* randomBeersDisplay={randomBeersDisplay}  */}
             {/* {this.renderProducts(randomBeersDisplay)} */}
 

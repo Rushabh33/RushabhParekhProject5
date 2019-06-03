@@ -135,3 +135,10 @@ main {
   padding-left: 5%;
   padding-top: 5%;
 }
+
+
+/* ********* FILTER SECTION Styles ********** */
+
+#search {
+  width: 100%;
+}
