@@ -28,11 +28,29 @@ h1 {
   font-size: 1.1rem;
 }
 
+h4 {
+  /* margin-left: 10%; */
+  font-size: 1rem;
+}
+
 /* ********* UNIVERSTAL  Styles ********** */
 .wrapper {
   max-width: 3840px;
   width: 80%;
   margin: 0 auto;
+}
+
+button {
+  background-color:#0ea7b5;
+}
+
+button:hover,
+button:focus {
+  background-color: #0c457d;
+}
+
+button:active {
+  transform: scale(0.9);
 }
 
 
@@ -94,26 +112,24 @@ main {
 
 /* ********* SORT SECTION Styles ********** */
 
-form {
+.sortCon form {
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 .sortSection {
   padding: 20px 0 20px 20px;
-  border: 2px solid #6bd2db;
+  border-bottom: 2px solid #0c457d
 }
+
 
 .sortCon {
   display: flex;
-  justify-content: center;
+  justify-content: center;;
 }
 
-.sortTitle,
-.filterTitle {
-  /* margin-left: 10%; */
-  font-size: calc(2vw + 0.1rem);
-}
+
 
 .singleInput {
   display: flex;
@@ -121,6 +137,7 @@ form {
   text-align: center;
   justify-content: space-around;
   width: 15%;
+  margin-left: 2%;
 }
 
 .sortCon input {
@@ -129,10 +146,11 @@ form {
 
 .sortButton {
   display: block;
-  width: 20%;
+  /* width: 20%; */
   text-transform: uppercase;
-  padding: 15px 20px;
-  background-color: #0ea7b5;
+  font-style: italic;
+  padding: 5px 15px;
+  margin-left: 3%;
   color: white;
   border: none;
 }
@@ -140,13 +158,15 @@ form {
 /* ********* FILTER SECTION Styles ********** */
 
 .filterSectionCon {
-  border: 2px solid #6bd2db;
-  padding-top: 30px;
+  border: 2px solid #0c457d;
+  border-top: none;
+  padding-top: 35px;
   min-height: 100vh;
 }
 
-.filterTitle {
-  margin-bottom: 30px;
+.filterCon h4 {
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 .filterCon button,
@@ -160,6 +180,22 @@ form {
 
 .countryLabel {
   padding-bottom: 10px;
+}
+
+.filterCon button {
+  display: block;
+  /* width: 20%; */
+  text-transform: uppercase;
+  font-style: italic;
+  padding: 5px 15px;
+  margin-left: 3%;
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.filterCon select{
+  width: 100%;
 }
 
 /* ********* PRODUCT DISPLAY SECTION Styles ********** */
@@ -180,18 +216,25 @@ form {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   text-align: center;
-
+  padding: 20px;
 }
+
 .productDisplayImg {
-  height: 100%;
+  margin-bottom: 5px;
+}
+
+.productDisplayInfo {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .productImg {
   object-fit: contain;
-  width: 50%;
+  width: 175px;
+  height: 185px;
   border: 1px solid black;
 }
 
@@ -207,4 +250,79 @@ form {
 
 #search {
   width: 100%;
+}
+
+/* ********* MEDIA QUERIES Styles ********** */
+
+@media (max-width: 915px) {
+  
+  .wrapper {
+    width: 90%
+  }
+
+  main {
+    flex-direction: column;
+  }
+  
+  .filterSectionCon {
+    padding: 20px 0;
+    min-height: auto;
+    width: 100%;
+    border-right: none;
+    border-left: none;
+  }
+
+  .filterCon {
+    display: flex;
+    align-items: center;
+  }
+
+  .filterCon button {
+    margin: 0 0 20px;;
+  }
+
+  .topHalfFilters {
+    width: calc(50% - 2%);
+    margin-right: 2%
+  }
+
+  .botHalfFilters{
+    width: calc(50% - 2%);
+    margin-left: 2%
+  }
+
+  .sortAndProductSectionCon{
+    width: 100%
+  }
+
+  .sortSection {
+    padding: 20px 0;
+  }
+
+  .singleInput {
+    margin: 0;
+  }
+
+  .sortCon {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .singleInput {
+    width: 20%;
+  }
+}
+
+@media (max-width: 510px) {
+  .sortCon form {
+    flex-wrap: wrap;
+  }
+  .sortCon button {
+    /* margin-top: 5%; */
+    width: 100%
+  }
+  .singleInput {
+    width: 50%;
+    margin-bottom: 5%;
+  }
 }

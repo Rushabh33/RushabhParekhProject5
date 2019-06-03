@@ -43,31 +43,32 @@ class FilterSection extends Component {
         return (
             <section className="filterSection">
                 <div className="filterCon wrapper">
-                    <h3 className="filterTitle">filter</h3>
-                    
-                    <button value="allProducts" onClick={this.handleAllProductsClick}>All Products</button>
-                    
-                    <button value="beerOfTheDay" onClick={this.handleAllProductsClick}>Beers Of The Day</button>
-                    
-                    <form action="" onSubmit={this.handleSearchSubmit}>
-                        <label htmlFor="search"></label>
-                        <input type="text" id="search" placeholder="name of brand" onChange={this.handleSearchOnChange}/>
-                    </form>
-                    
-                    <form onSubmit={this.handleSelectSubmit} >
-                        <label className="countryLabel" htmlFor="country">country</label>
-                        <select value={this.state.countryValue} onChange={this.handleSelectOnChange} id="country" placeholder="country">
-                            <option value="00Choose">Choose Country</option>
-                            <option value="00Germany">Germany</option>
-                            <option value="00Canada">Canada</option>
-                            <option value="00Denmark">Denmark</option>
-                            <option value="00France">France</option>
-                        </select>
-                        <input type="submit" value="Submit"/>
-                    </form>
-
-
-
+                    <div className="topHalfFilters">
+                        <h4 className="filterTitle">filter</h4>
+                        
+                        <button value="allProducts" onClick={this.handleAllProductsClick}>All Products</button>
+                        
+                        <button value="beerOfTheDay" onClick={this.handleAllProductsClick}>Beers Of The Day</button>
+                        
+                        <form action="" onSubmit={this.handleSearchSubmit}>
+                            <label htmlFor="search"></label>
+                            <input type="text" id="search" placeholder="search name" onChange={this.handleSearchOnChange}/>
+                        </form>
+                    </div>
+                    <div className="botHalfFilters">
+                        <h4>country</h4>
+                        <form className="countryFilterMobile"onSubmit={this.handleSelectSubmit} >
+                            <label className="countryLabel" htmlFor="country"></label>
+                            <select value={this.state.countryValue} onChange={this.handleSelectOnChange} id="country" placeholder="country">
+                                <option value="00Choose">Choose Country</option>
+                                <option value="00Germany">Germany</option>
+                                <option value="00Canada">Canada</option>
+                                <option value="00Denmark">Denmark</option>
+                                <option value="00France">France</option>
+                            </select>
+                            <button>submit</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         )

@@ -7,15 +7,16 @@ class SortSection extends Component {
     // 
     state = {
         sortValue: '',
-        isHighFirstChecked: false,
-        isLowFirstChecked: false
+        checked: false
+        // isHighFirstChecked: false,
+        // isLowFirstChecked: false
     }
 
     handleOnChangeSortLow = (e) => {
         console.log(e.target.value)
         this.setState({
             sortValue: e.target.value,
-            isLowFirstChecked: true
+            // isLowFirstChecked: true
         })
     }
     
@@ -23,7 +24,7 @@ class SortSection extends Component {
         console.log(e.target.value)
         this.setState({
             sortValue: e.target.value,
-            isHighFirstChecked: true
+            // isHighFirstChecked: true
         })
     }
     
@@ -31,8 +32,7 @@ class SortSection extends Component {
         e.preventDefault()
         this.props.handleSort(this.state.sortValue)
         this.setState({
-            isHighFirstChecked: false,
-            isLowFirstChecked: false
+            sortValue: ''
         })
     }
 
@@ -43,24 +43,24 @@ class SortSection extends Component {
             
             <div className="sortCon">  
                 <div className="singleInput">
-                    <h3 className="sortTitle">sort |</h3>
+                    <h4 className="sortTitle">Sort By:</h4>
                 </div>
                 <form action="" onSubmit={this.handleOnSubmit}>
                     <div className="singleInput">
-                        <label htmlFor="sortByPriceLow">Price: Low->High</label>
-                        <input type="radio" id="sortByPriceLow" name="sort" value="lowPriceFirst" checked={this.state.isLowFirstChecked} onChange={this.handleOnChangeSortLow}/>
+                        <label htmlFor="sortByPriceLow">Price: Lowest</label>
+                        <input type="radio" id="sortByPriceLow" name="sort" value="lowPriceFirst" checked={this.state.sortValue === "lowPriceFirst"} onChange={this.handleOnChangeSortLow}/>
                     </div>
                     <div className="singleInput">
-                        <label htmlFor="sortByPriceHigh">Price: High->Low</label>   
-                        <input type="radio" id="sortByPriceHigh" name="sort" value="highPriceFirst" checked={this.state.isHighFirstChecked} onChange={this.handleOnChangeSortHigh}/>
+                        <label htmlFor="sortByPriceHigh">Price: Highest</label>   
+                        <input type="radio" id="sortByPriceHigh" name="sort" value="highPriceFirst" checked={this.state.sortValue === "highPriceFirst"} onChange={this.handleOnChangeSortHigh}/>
                     </div>
                     <div className="singleInput">  
-                        <label htmlFor="sortByABVLow">ABV: Low->High</label>
-                        <input type="radio" id="sortByABVLow" name="sort" value="lowABVFirst" checked={this.state.isLowFirstChecked} onChange={this.handleOnChangeSortLow}/>
+                        <label htmlFor="sortByABVLow">ABV: Lowest</label>
+                        <input type="radio" id="sortByABVLow" name="sort" value="lowABVFirst" checked={this.state.sortValue === "lowABVFirst"} onChange={this.handleOnChangeSortLow}/>
                     </div>
                     <div className="singleInput">  
-                        <label htmlFor="sortByABVHigh">ABV: High->Low</label>   
-                        <input type="radio" id="sortByABVHigh" name="sort" value="highABVFirst" checked={this.state.isHighFirstChecked} onChange={this.handleOnChangeSortHigh}/>
+                        <label htmlFor="sortByABVHigh">ABV: Highest</label>   
+                        <input type="radio" id="sortByABVHigh" name="sort" value="highABVFirst" checked={this.state.sortValue === "highABVFirst"} onChange={this.handleOnChangeSortHigh}/>
                     </div>
                     
                     <button className="sortButton">Sort</button>
