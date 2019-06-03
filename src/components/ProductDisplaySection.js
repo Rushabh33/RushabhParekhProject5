@@ -18,7 +18,7 @@ class ProductDisplaySection extends Component {
         } else {
             return (
                 <>
-                    <p>Loding</p>
+                    <p>Loading</p>
                 </>
               )
         }

@@ -40,12 +40,18 @@ h1 {
 
 header {
   text-align: center;
+  padding-bottom: 80px;
+  background-color:#e8702a;
+}
+
+.navLogoConCon {
+  background-color: #0c457d;
 }
 
 .navLogoCon {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  padding: 20px 0;
 }
 
 .navLinksUl {
@@ -55,6 +61,8 @@ header {
 
 .navLinks {
   padding: 0 1vw 0;
+  font-style: italic;
+  color: white;
 }
 
 .navLinks:last-child {
@@ -62,7 +70,10 @@ header {
 }
 
 .mainTitle {
-  margin: 80px 0;
+  margin: 80px 0 0;
+  text-transform: uppercase;
+  color: white;
+  /* transform: rotate(-4deg) */
 }
 
 /* ********* MAIN SECTION Styles ********** */
@@ -73,7 +84,7 @@ main {
 
 .filterSectionCon {
   width: 20%;
-  min-height: 70vh;
+  /* min-height: 70vh; */
 }
 
 .sortAndProductSectionCon {
@@ -82,19 +93,74 @@ main {
 }
 
 /* ********* SORT SECTION Styles ********** */
+
+form {
+  width: 100%;
+  display: flex;
+}
+
 .sortSection {
-  padding: 20px 0;
+  padding: 20px 0 20px 20px;
+  border: 2px solid #6bd2db;
 }
 
 .sortCon {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.sortTitle {
-  font-size: calc(1vw + 0.1rem);
+.sortTitle,
+.filterTitle {
+  /* margin-left: 10%; */
+  font-size: calc(2vw + 0.1rem);
 }
 
+.singleInput {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  width: 15%;
+}
+
+.sortCon input {
+  padding: 5px;
+}
+
+.sortButton {
+  display: block;
+  width: 20%;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  background-color: #0ea7b5;
+  color: white;
+  border: none;
+}
+
+/* ********* FILTER SECTION Styles ********** */
+
+.filterSectionCon {
+  border: 2px solid #6bd2db;
+  padding-top: 30px;
+  min-height: 100vh;
+}
+
+.filterTitle {
+  margin-bottom: 30px;
+}
+
+.filterCon button,
+.filterCon form {
+  margin-top: 30px;
+}
+
+.filterCon form {
+  flex-direction: column;
+}
+
+.countryLabel {
+  padding-bottom: 10px;
+}
 
 /* ********* PRODUCT DISPLAY SECTION Styles ********** */
 
@@ -134,4 +200,11 @@ main {
   list-style: none;
   padding-left: 5%;
   padding-top: 5%;
+}
+
+
+/* ********* FILTER SECTION Styles ********** */
+
+#search {
+  width: 100%;
 }
