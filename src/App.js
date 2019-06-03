@@ -14,6 +14,14 @@ const priceSortFunctionLowToHigh = (a, b) => {
 const priceSortFunctionHighToLow = (a, b) => {
   return parseFloat(b.price) - parseFloat(a.price)
 }
+const abvSortFunctionLowToHigh = (a, b) => {
+  return parseFloat(a.abv) - parseFloat(b.abv)
+}
+const abvSortFunctionHighToLow = (a, b) => {
+  return parseFloat(b.abv) - parseFloat(a.abv)
+}
+
+
 const randomNumber = () => {
   return Math.floor(Math.random() * 2875) + 1; // EVENTUALLY MAKE 2875 A VARIABLE
 }
@@ -63,21 +71,47 @@ class App extends Component {
 
   
 
-  handleSortByPrice = (event) => {
+  handleSort = (eventValue) => {
     // Get the current displayed items
     const displayedProductsArray = [...this.state.beerDataInState]
     console.log("This is the data before SORT")
     console.log(displayedProductsArray)
-
-    if (event.target.value == "lowFirst"){
+    console.log(eventValue)
+    if (eventValue == "lowPriceFirst"){
       const sorted = [...displayedProductsArray].sort(priceSortFunctionLowToHigh)
+      
       console.log(sorted)
+      
       this.setState({
         beerDataInState: sorted
       })
-    } else if(event.target.value == "highFirst"){
+    } 
+    
+    else if(eventValue == "highPriceFirst"){
       const sorted = [...displayedProductsArray].sort(priceSortFunctionHighToLow)
+      
       console.log(sorted)
+      
+      this.setState({
+        beerDataInState: sorted
+      })
+    }
+
+    else if(eventValue == "lowABVFirst"){
+      const sorted = [...displayedProductsArray].sort(abvSortFunctionLowToHigh)
+      
+      console.log(sorted)
+      
+      this.setState({
+        beerDataInState: sorted
+      })
+    }
+
+    else if(eventValue == "highABVFirst"){
+      const sorted = [...displayedProductsArray].sort(abvSortFunctionHighToLow)
+      
+      console.log(sorted)
+      
       this.setState({
         beerDataInState: sorted
       })
@@ -87,6 +121,7 @@ class App extends Component {
   }
 
   handleFilter = (e) => {
+    // DISPLAY -- ALL THE PRODUCTS
     if (e == "allProducts"){
       const displayAllProducts = [...this.state.products.slice(0, 10)]
       console.log(displayAllProducts)
@@ -95,6 +130,7 @@ class App extends Component {
       })
     }
 
+    // DISPLAY -- BEER OF THE DAY
     else if (e == "beerOfTheDay"){
       console.log(this.state.beerOfTheDay)
       const displayBeerOfTheDay = [...this.state.beerOfTheDay]
@@ -103,6 +139,31 @@ class App extends Component {
         beerDataInState: displayBeerOfTheDay
       })
     } 
+
+    // DISPLAY -- COUNTRY SORTED BEER
+    else if (e.slice(0, 2) == "00"){
+      console.log(e.slice(2))
+      if (e === "00Choose"){
+        console.log("in the if")
+        return null;
+      } else {
+        
+        const listOfBeers = [...this.state.products]
+        const countryFilter = e.slice(2)
+        const countryBasedListOfBeers = [];
+        for (let i = 0; i <listOfBeers.length; i++){
+          if (listOfBeers[i].country.includes(countryFilter)){
+            countryBasedListOfBeers.push(listOfBeers[i])
+          }
+        }  
+        this.setState({
+          beerDataInState: countryBasedListOfBeers.slice(0, 10) 
+          //change after figuring out infinite scroll idea...
+        })
+        }
+    } 
+    
+    // DISPLAY -- SEARCHED SORTED BEER
     else {
       console.log(e);
       const listOfBeers = [...this.state.products]
@@ -146,8 +207,8 @@ class App extends Component {
           <div className="sortAndProductSectionCon">{/* Potential component? */}
 
             <SortSection 
-            beerDataInState={this.state.beerDataInState}
-            // handleSortByPrice={this.handleSortByPrice} 
+            // beerDataInState={this.state.beerDataInState}
+            handleSort={this.handleSort} 
             />
             
             <ProductDisplaySection

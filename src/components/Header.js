@@ -4,8 +4,10 @@ import NavLogoHeader from './NavLogoHeader.js';
 const Header = (props) => {
     return (
         <header>
-            <NavLogoHeader/> 
-            <h1 className="mainTitle">a Brew for Every occasion</h1>
+            <div className="navLogoConCon">
+                <NavLogoHeader/> 
+            </div>
+            <h1 className="mainTitle">beer is good</h1>
         </header>
     )
 }
