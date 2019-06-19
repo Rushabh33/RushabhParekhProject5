@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/RushabhParekhProject5/static/css/main.056ff98c.chunk.css",
-    "main.js": "/RushabhParekhProject5/static/js/main.ad9f4d8a.chunk.js",
-    "main.js.map": "/RushabhParekhProject5/static/js/main.ad9f4d8a.chunk.js.map",
-    "runtime~main.js": "/RushabhParekhProject5/static/js/runtime~main.9da68c16.js",
-    "runtime~main.js.map": "/RushabhParekhProject5/static/js/runtime~main.9da68c16.js.map",
-    "static/js/2.a3a80406.chunk.js": "/RushabhParekhProject5/static/js/2.a3a80406.chunk.js",
-    "static/js/2.a3a80406.chunk.js.map": "/RushabhParekhProject5/static/js/2.a3a80406.chunk.js.map",
-    "index.html": "/RushabhParekhProject5/index.html",
-    "precache-manifest.5a76ba613b96716d2a8df8c31de17c7e.js": "/RushabhParekhProject5/precache-manifest.5a76ba613b96716d2a8df8c31de17c7e.js",
-    "service-worker.js": "/RushabhParekhProject5/service-worker.js",
-    "static/css/main.056ff98c.chunk.css.map": "/RushabhParekhProject5/static/css/main.056ff98c.chunk.css.map"
+    "main.css": "/theBeerStoreAPI-ecommerce-REACT/static/css/main.056ff98c.chunk.css",
+    "main.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/main.b1267759.chunk.js",
+    "main.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/main.b1267759.chunk.js.map",
+    "runtime~main.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/runtime~main.f9de72e1.js",
+    "runtime~main.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/runtime~main.f9de72e1.js.map",
+    "static/js/2.a3a80406.chunk.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/2.a3a80406.chunk.js",
+    "static/js/2.a3a80406.chunk.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/2.a3a80406.chunk.js.map",
+    "index.html": "/theBeerStoreAPI-ecommerce-REACT/index.html",
+    "precache-manifest.190b313d6db3ae2bab4775d27b510f65.js": "/theBeerStoreAPI-ecommerce-REACT/precache-manifest.190b313d6db3ae2bab4775d27b510f65.js",
+    "service-worker.js": "/theBeerStoreAPI-ecommerce-REACT/service-worker.js",
+    "static/css/main.056ff98c.chunk.css.map": "/theBeerStoreAPI-ecommerce-REACT/static/css/main.056ff98c.chunk.css.map"
   }
 }
