@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/theBeerStoreAPI-ecommerce-REACT/static/css/main.056ff98c.chunk.css",
-    "main.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/main.b1267759.chunk.js",
-    "main.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/main.b1267759.chunk.js.map",
-    "runtime~main.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/runtime~main.f9de72e1.js",
-    "runtime~main.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/runtime~main.f9de72e1.js.map",
-    "static/js/2.a3a80406.chunk.js": "/theBeerStoreAPI-ecommerce-REACT/static/js/2.a3a80406.chunk.js",
-    "static/js/2.a3a80406.chunk.js.map": "/theBeerStoreAPI-ecommerce-REACT/static/js/2.a3a80406.chunk.js.map",
-    "index.html": "/theBeerStoreAPI-ecommerce-REACT/index.html",
-    "precache-manifest.190b313d6db3ae2bab4775d27b510f65.js": "/theBeerStoreAPI-ecommerce-REACT/precache-manifest.190b313d6db3ae2bab4775d27b510f65.js",
-    "service-worker.js": "/theBeerStoreAPI-ecommerce-REACT/service-worker.js",
-    "static/css/main.056ff98c.chunk.css.map": "/theBeerStoreAPI-ecommerce-REACT/static/css/main.056ff98c.chunk.css.map"
+    "main.css": "/theBeerStoreAPI-ReactJS/static/css/main.b1916cbf.chunk.css",
+    "main.js": "/theBeerStoreAPI-ReactJS/static/js/main.d97636cb.chunk.js",
+    "main.js.map": "/theBeerStoreAPI-ReactJS/static/js/main.d97636cb.chunk.js.map",
+    "runtime~main.js": "/theBeerStoreAPI-ReactJS/static/js/runtime~main.62a4006a.js",
+    "runtime~main.js.map": "/theBeerStoreAPI-ReactJS/static/js/runtime~main.62a4006a.js.map",
+    "static/js/2.3d6374c7.chunk.js": "/theBeerStoreAPI-ReactJS/static/js/2.3d6374c7.chunk.js",
+    "static/js/2.3d6374c7.chunk.js.map": "/theBeerStoreAPI-ReactJS/static/js/2.3d6374c7.chunk.js.map",
+    "index.html": "/theBeerStoreAPI-ReactJS/index.html",
+    "precache-manifest.86ac500d414e4d0e27ade93e1c894d34.js": "/theBeerStoreAPI-ReactJS/precache-manifest.86ac500d414e4d0e27ade93e1c894d34.js",
+    "service-worker.js": "/theBeerStoreAPI-ReactJS/service-worker.js",
+    "static/css/main.b1916cbf.chunk.css.map": "/theBeerStoreAPI-ReactJS/static/css/main.b1916cbf.chunk.css.map",
+    "static/media/filterIcon.svg": "/theBeerStoreAPI-ReactJS/static/media/filterIcon.1ed01802.svg",
+    "static/media/placeHolderImage.svg": "/theBeerStoreAPI-ReactJS/static/media/placeHolderImage.1182456c.svg",
+    "static/media/theBeerStoreLogo.svg": "/theBeerStoreAPI-ReactJS/static/media/theBeerStoreLogo.ec55f38e.svg"
   }
 }
