@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <div className="headerContainer wrapper">
         <Logo />
-        <NavBar />
+        {/* <NavBar /> */}
       </div>
     </header>
   )

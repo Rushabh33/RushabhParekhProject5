@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -17,6 +20,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://Rushabh33.github.io/theBeerStoreAPI-reactJS",
   "browserslist": {
     "production": [
       ">0.2%",
