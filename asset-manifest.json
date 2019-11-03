@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/theBeerStoreAPI-ReactJS/static/css/main.b1916cbf.chunk.css",
-    "main.js": "/theBeerStoreAPI-ReactJS/static/js/main.d97636cb.chunk.js",
-    "main.js.map": "/theBeerStoreAPI-ReactJS/static/js/main.d97636cb.chunk.js.map",
-    "runtime~main.js": "/theBeerStoreAPI-ReactJS/static/js/runtime~main.62a4006a.js",
-    "runtime~main.js.map": "/theBeerStoreAPI-ReactJS/static/js/runtime~main.62a4006a.js.map",
-    "static/js/2.3d6374c7.chunk.js": "/theBeerStoreAPI-ReactJS/static/js/2.3d6374c7.chunk.js",
-    "static/js/2.3d6374c7.chunk.js.map": "/theBeerStoreAPI-ReactJS/static/js/2.3d6374c7.chunk.js.map",
-    "index.html": "/theBeerStoreAPI-ReactJS/index.html",
-    "precache-manifest.86ac500d414e4d0e27ade93e1c894d34.js": "/theBeerStoreAPI-ReactJS/precache-manifest.86ac500d414e4d0e27ade93e1c894d34.js",
-    "service-worker.js": "/theBeerStoreAPI-ReactJS/service-worker.js",
-    "static/css/main.b1916cbf.chunk.css.map": "/theBeerStoreAPI-ReactJS/static/css/main.b1916cbf.chunk.css.map",
-    "static/media/filterIcon.svg": "/theBeerStoreAPI-ReactJS/static/media/filterIcon.1ed01802.svg",
-    "static/media/placeHolderImage.svg": "/theBeerStoreAPI-ReactJS/static/media/placeHolderImage.1182456c.svg",
-    "static/media/theBeerStoreLogo.svg": "/theBeerStoreAPI-ReactJS/static/media/theBeerStoreLogo.ec55f38e.svg"
+    "main.css": "/static/css/main.08dfc08d.chunk.css",
+    "main.js": "/static/js/main.5619bcb7.chunk.js",
+    "main.js.map": "/static/js/main.5619bcb7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.722302ac.js",
+    "runtime-main.js.map": "/static/js/runtime-main.722302ac.js.map",
+    "static/js/2.55d320c6.chunk.js": "/static/js/2.55d320c6.chunk.js",
+    "static/js/2.55d320c6.chunk.js.map": "/static/js/2.55d320c6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.de05a16d39ef10a7032d4b3b4bcfff12.js": "/precache-manifest.de05a16d39ef10a7032d4b3b4bcfff12.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.08dfc08d.chunk.css.map": "/static/css/main.08dfc08d.chunk.css.map",
+    "static/media/App.scss": "/static/media/bannerBackground.4e52120f.jpg",
+    "static/media/filterIcon.svg": "/static/media/filterIcon.1ed01802.svg",
+    "static/media/placeHolderImage.svg": "/static/media/placeHolderImage.1182456c.svg",
+    "static/media/searchIcon.svg": "/static/media/searchIcon.2ea4c436.svg",
+    "static/media/theBeerStoreLogo.svg": "/static/media/theBeerStoreLogo.b011b918.svg"
   }
 }
