@@ -1,0 +1,12 @@
+.toggleFilterContainer {
+  width: 30%;
+
+  button {
+    padding: 9px 9px 1px;
+  }
+  
+  button:hover,
+  button:focus {
+  background: $buttonFilterColor;
+  }
+}

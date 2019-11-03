@@ -1,0 +1,12 @@
+.sortSectionContainer {
+  border-top: solid 0.5px $borderColor;
+  border-bottom: solid 0.5px $borderColor;
+  padding: 15px 0;
+  
+  div {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
